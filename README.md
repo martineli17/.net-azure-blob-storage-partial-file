@@ -2,7 +2,7 @@
 ## Contexto
 <p>Ao solicitar o retorno dos dados de um determinado arquivo, esse retorno pode ser particionado a fim de econimizar processamento e recursos.</p>
 <p>Imagine o cenário em que existe um arquivo extenso e com grande volume de dados. Se o mesmo for carregado por completo de uma única vez na memória de sua aplicação, isso pode torná-la lenta durante o processamento e utilizar recursos além do necessário.</p>
-<p>Ainda com esse cenário em mente e supondo que existe uma análise para verificar a consistência dos dados. Se existir algum dado inconsistência logo no início do arquivo, o restante dos dados foi carregado e não será utilizado, gastando recursos que não foram necessários posteriormente.</p>
+<p>Ainda com esse cenário em mente e supondo que existe uma análise para verificar a consistência dos dados, se existir algum dado inconsistente logo no início do arquivo, o restante dos dados foi carregado e não será utilizado, gastando recursos que não foram necessários ao longo do processo.</p>
 <p>No Azure Blob Storage, existe uma maneira de solicitar partes específicas de um arquivo, carregando o conteúdo sob demanda.</p>
 
 ## Utilização
