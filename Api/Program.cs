@@ -16,9 +16,9 @@ app.MapGet("upload-file", async ([FromServices] BlobService blobService) =>
     await defaultFile.DisposeAsync();
     return Results.Ok();
 });
-app.MapGet("partial-file", async ([FromQuery] long startAt, [FromQuery] long endAt, [FromServices] BlobService blobService) =>
+app.MapGet("partial-file", async ([FromQuery] long offset, [FromQuery] long length, [FromServices] BlobService blobService) =>
 {
-    var result = await blobService.GetPartialFileAsync(startAt, endAt, "arquivo-exemplo.txt", "example");
+    var result = await blobService.GetPartialFileAsync(offset, length, "arquivo-exemplo.txt", "example");
     return Results.Ok(new { Content = result });
 });
 app.Run();

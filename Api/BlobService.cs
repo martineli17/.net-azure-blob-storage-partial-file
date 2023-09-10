@@ -21,9 +21,9 @@ namespace Api
             await containerClient.UploadBlobAsync(fileName, file);
         }
 
-        public async Task<string> GetPartialFileAsync(long startAt, long endAt, string fileName, string containerName)
+        public async Task<string> GetPartialFileAsync(long offset, long length, string fileName, string containerName)
         {
-            var httpRange = new HttpRange(startAt, endAt);
+            var httpRange = new HttpRange(offset, length);
             var containerClient = _blobClient.GetBlobContainerClient(containerName);
             var blobClient = containerClient.GetBlobClient(fileName);
             var contentFile = await blobClient.DownloadContentAsync(new BlobDownloadOptions()
